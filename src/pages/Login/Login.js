@@ -26,10 +26,11 @@ const Login = props => {
   }, [])
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     console.log("form validity", form.checkValidity());
     if (form.checkValidity() === false) {
-      event.preventDefault();
+      
       event.stopPropagation();
 
     } else {
@@ -40,6 +41,9 @@ const Login = props => {
       setTimeout(() => {
         state.UI.IsLoading.set(false);
         localStorage.setItem("LogedUser", state.Email.value);
+        console.log("root ", Routes.Dashboard.path);
+        debugger;
+
         props.history.push(Routes.Dashboard.path);
       }, 5000);
 
@@ -62,7 +66,9 @@ const Login = props => {
                 <div className="text-center text-md-center mb-4 mt-md-0">
                   <h4 className="mb-0">Sign in to our platform</h4>
                 </div>
-                <Form className="mt-4" noValidate validated={state.UI.validated.value} onSubmit={handleSubmit}>
+                <Form className="mt-4" 
+                
+                noValidate validated={state.UI.validated.value} onSubmit={handleSubmit}>
                   <Form.Group id="email" className="mb-4">
                     <Form.Label>Your Email</Form.Label>
                     <InputGroup>
@@ -103,7 +109,7 @@ const Login = props => {
                   >
                     {state.UI.IsLoading.value ?
 
-                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : null}
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : null}
                     Sign in
                   </Button>
                 </Form>

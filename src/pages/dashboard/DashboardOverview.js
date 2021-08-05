@@ -14,7 +14,7 @@ import IslogedIn from "../../common/IsLogedIn";
 export default ({ history }) => {
   useEffect(() => {
     if (!IslogedIn()) {
-      debugger;
+      
       history.push(Routes.SignIn.path);
     }
   }, []);
