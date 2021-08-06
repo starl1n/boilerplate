@@ -5,11 +5,11 @@ import { faBell, faCog, faEnvelopeOpen, faSearch, faSignOutAlt, faUserShield } f
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { Row, Col, Nav, Form, Image, Navbar, Dropdown, Container, ListGroup, InputGroup } from '@themesberg/react-bootstrap';
 
-import NOTIFICATIONS_DATA from "../data/notifications";
-import Profile3 from "../assets/img/team/profile-picture-3.jpg";
-import { Routes } from "../routes";
-import GetCurrentUser from "../common/GetCurrentUser";
-import AddEditProject from "./Projects/AddEditProject";
+import NOTIFICATIONS_DATA from "../../data/notifications";
+import Profile3 from "../../assets/img/team/profile-picture-3.jpg";
+import { Routes } from "../../routes";
+import GetCurrentUser from "../../common/GetCurrentUser";
+import AddEditProject from "../Projects/AddEditProject";
 
 
 export default (props) => {
@@ -105,8 +105,8 @@ export default (props) => {
                 </div>
               </Dropdown.Toggle>
               <Dropdown.Menu className="user-dropdown dropdown-menu-right mt-2">
-                <Dropdown.Item className="fw-bold">
-                  <FontAwesomeIcon icon={faUserCircle} className="me-2" /> My Profile
+                <Dropdown.Item className="fw-bold" onClick={()=> props.history.push(Routes.Profile.path)}>
+                  <FontAwesomeIcon icon={faUserCircle} className="me-2" /> Profile
                 </Dropdown.Item>
                 <Dropdown.Item className="fw-bold">
                   <FontAwesomeIcon icon={faCog} className="me-2" /> Settings

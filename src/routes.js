@@ -9,6 +9,7 @@ export const Routes = {
     SignIn: {path:"/signin"},
     NotFound: { path: "/examples/404" },
     ServerError: { path: "/examples/500" },
+    Profile: {path:"/profile"}
 
  
 };

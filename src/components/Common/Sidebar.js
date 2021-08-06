@@ -4,14 +4,14 @@ import SimpleBar from 'simplebar-react';
 import { useLocation } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faBoxOpen, faChartPie, faCog, faFileAlt, faHandHoldingUsd, faSignOutAlt, faTable, faTimes, faCalendarAlt, faMapPin, faInbox, faRocket } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faBoxOpen, faChartPie, faCog, faFileAlt, faHandHoldingUsd, faSignOutAlt, faTable, faTimes, faCalendarAlt, faMapPin, faInbox, faRocket, faUserCircle, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Badge, Image, Button, Dropdown, Accordion, Navbar } from '@themesberg/react-bootstrap';
 import { Link } from 'react-router-dom';
-import GetCurrentUser from "../common/GetCurrentUser";
-import { Routes } from "../routes";
-import ThemesbergLogo from "../assets/img/themesberg.svg";
-import ReactHero from "../assets/img/technologies/react-hero-logo.svg";
-import ProfilePicture from "../assets/img/team/profile-picture-3.jpg";
+import GetCurrentUser from "../../common/GetCurrentUser";
+import { Routes } from "../../routes";
+
+import ReactHero from "../../assets/img/technologies/react-hero-logo.svg";
+import ProfilePicture from "../../assets/img/team/profile-picture-3.jpg";
 
 export default (props = {}) => {
   const location = useLocation();
@@ -112,7 +112,8 @@ export default (props = {}) => {
 
               <NavItem title="Overview" link={Routes.Dashboard.path} icon={faChartPie} />
 
-              <NavItem title="Projects" icon={faCog} link={Routes.Settings.path} />
+              <NavItem title="Projects" icon={faProjectDiagram} link={Routes.Projects.path} />
+              <NavItem title="Profile" icon={faUserCircle} link={Routes.Profile.path} />
               <NavItem title="Settings" icon={faCog} link={Routes.Settings.path} />
 
               <CollapsableNavItem eventKey="tables/" title="Tables" icon={faTable}>

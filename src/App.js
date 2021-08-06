@@ -5,17 +5,19 @@ import { Routes } from "./routes";
 // pages
 
 
-import DashboardOverview from "./pages/dashboard/DashboardOverview";
+import DashboardOverview from "./components/dashboard/DashboardOverview";
 
-import Settings from "./pages/Settings";
+import Settings from './components/Settings/Settings';
 // components
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Sidebar from "./components/Common/Sidebar";
+import Navbar from "./components/Common/Navbar";
+import Footer from "./components/Common/Footer";
 import Preloader from "./components/Preloader";
-import Login from './pages/Login/Login';
-import IsLogedIn from './common/helpers';
+import Login from './components/Login/Login';
+
 import ProjectDetails from './components/Projects/ProjectDetails';
+import Profile from './components/Profile/Index';
+import Projects from './components/Projects/Projects';
 
 const RouteWithLoader = ({ component: Component, ...rest }) => {
   const [loaded, setLoaded] = useState(false);
@@ -74,7 +76,9 @@ export default () => (
     {/* pages */}
     <RouteWithSidebar exact path={Routes.Dashboard.path} component={DashboardOverview} />
     <RouteWithSidebar exact path={Routes.Settings.path} component={Settings} />
+    <RouteWithSidebar exact path={Routes.Projects.path} component={Projects} />
     <RouteWithSidebar exact path={Routes.ProjectDetails.path} component={ProjectDetails} />
+    <RouteWithSidebar exact path={Routes.Profile.path} component={Profile} />
     <Route path={Routes.SignIn.path} component={Login}/>
 
     <Redirect to={Routes.NotFound.path} />
