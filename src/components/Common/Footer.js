@@ -16,7 +16,7 @@ export default (props) => {
             <p className="mb-0 text-center text-xl-left">
               Copyright © {`${currentYear} `}
               <Card.Link href="https://themesberg.com" target="_blank" className="text-blue text-decoration-none fw-normal">
-                Themesberg
+                Valego
               </Card.Link>
             </p>
           </Col>
