@@ -6,10 +6,14 @@ export const Routes = {
     Settings: {path:"/settings"},
     Projects: {path:"/projects"},
     ProjectDetails: {path:"/Projects/detail/:id", clean:"/Projects/Detail/"},
+    
+    NotFound: { path: "/examples/NotFound" },
+    ServerError: { path: "/examples/ServerError" },
+    
+    
+    Profile: {path:"/profile"},
     SignIn: {path:"/signin"},
-    NotFound: { path: "/examples/404" },
-    ServerError: { path: "/examples/500" },
-    Profile: {path:"/profile"}
-
- 
+    Register: {path:"/Register"},
+    ForgotPassword: {path: "/ForgotPassword"},
+    ResetPassword: {path: "/ResetPassword"},
 };

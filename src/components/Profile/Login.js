@@ -101,7 +101,7 @@ const Login = props => {
                     </Form.Group>
                     <div className="d-flex justify-content-between align-items-center mb-4 text-right">
 
-                      <Card.Link className="small text-end">Lost password?</Card.Link>
+                      <Card.Link className="small text-end" as={Link} to={Routes.ForgotPassword.path}>Lost password?</Card.Link>
                     </div>
                   </Form.Group>
                   <Button variant="primary" type="submit" className="w-100"
@@ -109,7 +109,7 @@ const Login = props => {
                   >
                     {state.UI.IsLoading.value ?
 
-                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : null}
+                      <span className="spinner-border spinner-border-sm mr-4" role="status" aria-hidden="true"></span> : null}
                     Sign in
                   </Button>
                 </Form>
@@ -118,7 +118,7 @@ const Login = props => {
                 <div className="d-flex justify-content-center align-items-center mt-4">
                   <span className="fw-normal">
                     Not registered?
-                    <Card.Link as={Link} to={Routes.SignIn.path} className="fw-bold">
+                    <Card.Link as={Link} to={Routes.Register.path} className="fw-bold">
                       {` Create account `}
                     </Card.Link>
                   </span>

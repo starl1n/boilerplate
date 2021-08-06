@@ -13,11 +13,17 @@ import Sidebar from "./components/Common/Sidebar";
 import Navbar from "./components/Common/Navbar";
 import Footer from "./components/Common/Footer";
 import Preloader from "./components/Preloader";
-import Login from './components/Login/Login';
+
 
 import ProjectDetails from './components/Projects/ProjectDetails';
-import Profile from './components/Profile/Index';
 import Projects from './components/Projects/Projects';
+import Profile from './components/Profile/Profile';
+import Login from './components/Profile/Login';
+import Register from './components/Profile/Register';
+import ForgotPassword from './components/Profile/ForgotPassword';
+
+
+
 
 const RouteWithLoader = ({ component: Component, ...rest }) => {
   const [loaded, setLoaded] = useState(false);
@@ -78,8 +84,11 @@ export default () => (
     <RouteWithSidebar exact path={Routes.Settings.path} component={Settings} />
     <RouteWithSidebar exact path={Routes.Projects.path} component={Projects} />
     <RouteWithSidebar exact path={Routes.ProjectDetails.path} component={ProjectDetails} />
+
     <RouteWithSidebar exact path={Routes.Profile.path} component={Profile} />
     <Route path={Routes.SignIn.path} component={Login}/>
+    <Route path={Routes.Register.path} component={Register}/>
+    <Route path={Routes.ForgotPassword.path} component={ForgotPassword}/>
 
     <Redirect to={Routes.NotFound.path} />
   </Switch>
